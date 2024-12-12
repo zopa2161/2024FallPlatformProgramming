@@ -53,7 +53,7 @@ public class MyApplicationContext {
                     if(Class.forName(className).isAnnotationPresent(MyController.class)||Class.forName(className).isAnnotationPresent(MyService.class)||
                             Class.forName(className).isAnnotationPresent(MyRepository.class)) {
 
-                        //System.out.println(file.getName());
+
                         registerBean(Class.forName(className));
                     };
 
