@@ -18,10 +18,10 @@ public class ExceptionHandlingProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         try{
-            return method.invoke(target, args);
+            return method.invoke(target, args);//정상 실행
 
         }catch(InvocationTargetException e){
-            Throwable cause = e.getCause();
+            Throwable cause = e.getCause();//여기서 어노테이션 체크하고 에러 대신처리
 
             Method handler = findExceptionHandler(cause);
             if(handler != null){
